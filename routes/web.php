@@ -21,3 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/adminPublish', function () {
+    // Admin page
+    return 'You are an admin';
+})->middleware('role_or_permission:publish articles')->name('admin.publish');
+
+
+Route::get('/userEdit', function(){
+    // User page
+    return 'You are a user';
+})->middleware('role_or_permission:edit articles')->name('user.edit');

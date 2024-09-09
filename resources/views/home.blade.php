@@ -21,6 +21,8 @@
                 +     @endcan
                 +     @can('publish articles')
                 +     You can PUBLISH ARTICLES.
+                        ayo push article
+                        <a href="{{ route('admin.publish') }}"><button type="button" class="btn btn-primary">Publish article</button> </a>
                 +     @endcan
                 +     @can('only super-admins can see this section')
                 +     Congratulations, you are a super-admin!
