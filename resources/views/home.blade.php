@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
 
-                    @can('edit articles')
+                    {{-- @can('edit articles')
                     You can EDIT ARTICLES.
                 +     @endcan
                 +     @can('publish articles')
@@ -26,7 +26,9 @@
                 +     @endcan
                 +     @can('only super-admins can see this section')
                 +     Congratulations, you are a super-admin!
-                +     @endcan
+                +     @endcan --}}
+
+                <a href="{{ route('borrow.borrow') }}"> <button type="button" class="btn btn-danger">ayo pinjam</button> </a>
 
                 </div>
             </div>

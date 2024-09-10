@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\borrowingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 Route::get('/adminPublish', function () {
     // Admin page
     return 'You are an admin';
@@ -31,3 +32,6 @@ Route::get('/userEdit', function(){
     // User page
     return 'You are a user';
 })->middleware('role_or_permission:edit articles')->name('user.edit');
+
+
+Route::get('/borrow', [borrowingController::class, 'index'])->name('borrow.borrow');
